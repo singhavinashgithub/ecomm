@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#f6f7f2">
+	<title>Atelier — A little more you.</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="index.css">
+</head>
+<body>
+	<div class="announcement"><span>Complimentary shipping on orders over $150</span><span class="announcement-note">Thoughtfully chosen. Made to last.</span></div>
+	<header class="site-header">
+		<a class="wordmark" href="#top" aria-label="Atelier home">atelier<span>.</span></a>
+		<nav class="main-nav" aria-label="Main navigation">
+			<a class="nav-link active" href="#shop">Discover</a>
+			<a class="nav-link" href="#shop" data-category-link="Clothing">Clothing</a>
+			<a class="nav-link" href="#shop" data-category-link="Accessories">Accessories</a>
+			<a class="nav-link" href="#shop" data-category-link="Objects">Objects</a>
+		</nav>
+		<div class="header-actions">
+			<button class="icon-button search-toggle" aria-label="Search products" title="Search"><i data-lucide="search"></i></button>
+			<button class="icon-button account-button" aria-label="Your account" title="Account"><i data-lucide="user-round"></i></button>
+			<button class="bag-button" id="bag-button" aria-label="Open shopping bag"><i data-lucide="shopping-bag"></i><span>Bag</span><span class="bag-count" id="bag-count">0</span></button>
+		</div>
+	</header>
+
+	<main id="top">
+		<section class="hero" aria-labelledby="hero-title">
+			<img class="hero-image" src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=2200&q=88" alt="Friends sharing a sunny afternoon in thoughtfully styled outfits">
+			<div class="hero-shade"></div>
+			<div class="hero-copy">
+				<span class="eyebrow hero-eyebrow"><span class="eyebrow-line"></span> THE ART OF FINDING YOURS</span>
+				<h1 id="hero-title">A little<br><em>more you.</em></h1>
+				<p>Good things, found your way. Meet your new favorite pieces, chosen with a little help from AI.</p>
+				<a class="hero-cta" href="#shop">Explore the edit <i data-lucide="arrow-down-right"></i></a>
+			</div>
+			<div class="hero-index"><span>01</span><span class="index-rule"></span><span>03</span></div>
+			<div class="hero-caption">THE EVERYDAY, REIMAGINED <span>SPRING / SUMMER 2025</span></div>
+		</section>
+
+		<section class="shop-section" id="shop">
+			<div class="shop-heading">
+				<div>
+					<span class="eyebrow section-eyebrow"><span class="eyebrow-line"></span> A MORE PERSONAL KIND OF SHOPPING</span>
+					<h2>Find your <em>feel-good.</em></h2>
+				</div>
+				<p class="shop-intro">A considered collection for the way you actually live. Tell our stylist what you're looking for and we'll find your match.</p>
+			</div>
+
+			<div class="stylist-bar" id="stylist-bar">
+				<div class="stylist-mark"><i data-lucide="sparkles"></i></div>
+				<div class="stylist-prompt-wrap">
+					<label for="stylist-input" class="stylist-label">YOUR PERSONAL STYLIST</label>
+					<input id="stylist-input" type="text" placeholder="Try “something for a summer dinner” or “under $100”" autocomplete="off">
+				</div>
+				<button id="stylist-submit" class="stylist-submit"><span>Find my edit</span><i data-lucide="arrow-right"></i></button>
+			</div>
+			<div class="stylist-response" id="stylist-response" aria-live="polite" hidden></div>
+
+			<div class="catalog-toolbar">
+				<div class="filter-list" role="group" aria-label="Filter products by category">
+					<button class="filter-chip selected" data-filter="All">Everything <span class="filter-total" id="total-count">08</span></button>
+					<button class="filter-chip" data-filter="Clothing">Clothing</button>
+					<button class="filter-chip" data-filter="Accessories">Accessories</button>
+					<button class="filter-chip" data-filter="Objects">Objects</button>
+				</div>
+				<label class="sort-control" for="sort-select"><span>Sort by</span><select id="sort-select"><option value="featured">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option></select><i data-lucide="chevron-down"></i></label>
+			</div>
+
+			<div class="search-row" id="search-row" hidden>
+				<i data-lucide="search"></i><input id="search-input" type="search" placeholder="Search the collection" aria-label="Search the collection"><button id="clear-search" aria-label="Clear search"><i data-lucide="x"></i></button>
+			</div>
+
+			<div class="product-grid" id="product-grid" aria-live="polite"></div>
+			<div class="empty-state" id="empty-state" hidden>
+				<i data-lucide="scan-search"></i><h3>No exact match just yet.</h3><p>Try a different search, or ask your stylist for a fresh direction.</p><button id="reset-filters">See everything</button>
+			</div>
+			<div class="collection-note"><span>01 — 08</span><span>GOOD DESIGN, GOOD FEELING.</span><span>CURATED WITH CARE <i data-lucide="heart"></i></span></div>
+		</section>
+		<section class="closing-band">
+			<div class="closing-sparkle"><i data-lucide="sparkles"></i></div>
+			<p>Less scrolling.<br><em>More finding.</em></p>
+			<a href="#stylist-bar">Ask your stylist <i data-lucide="arrow-up-right"></i></a>
+		</section>
+	</main>
+
+	<footer class="site-footer"><a class="wordmark footer-mark" href="#top">atelier<span>.</span></a><span>Considered things for everyday life.</span><span>© ATELIER 2025</span></footer>
+
+	<div class="drawer-backdrop" id="drawer-backdrop"></div>
+	<aside class="cart-drawer" id="cart-drawer" aria-label="Shopping bag" aria-hidden="true">
+		<div class="drawer-head"><div><span class="eyebrow">YOUR SELECTION</span><h2>Your bag <span id="drawer-count">(0)</span></h2></div><button class="icon-button" id="close-cart" aria-label="Close shopping bag"><i data-lucide="x"></i></button></div>
+		<div class="cart-items" id="cart-items"></div>
+		<div class="cart-empty" id="cart-empty"><i data-lucide="shopping-bag"></i><p>Your next favorite is out there.</p><button id="continue-shopping">Keep exploring</button></div>
+		<div class="cart-footer" id="cart-footer" hidden><div class="subtotal-row"><span>Subtotal</span><strong id="cart-subtotal">$0</strong></div><p>Shipping and taxes calculated at checkout.</p><button class="checkout-button">Continue to checkout <i data-lucide="arrow-right"></i></button></div>
+	</aside>
+
+	<div class="toast" id="toast" role="status" aria-live="polite"></div>
+	<script src="https://unpkg.com/lucide@latest"></script>
+	<script src="script.js"></script>
+</body>
+</html>
